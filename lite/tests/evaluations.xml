@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 只读 Agent 评测题。将任务工作区设置为 lite 目录，使用 project_context、find_files、search_content、read_file 等工具检查源码。参考答案由实现与集成验证核对；尚未进行独立模型评测。 -->
+<evaluation>
+  <qa_pair><question>两个任务使用相同文件夹，并分别保存同名记忆。沿接入层、工具调度和记忆查询检查，最终决定记忆归属的数据库字段是什么？</question><answer>task_id</answer></qa_pair>
+  <qa_pair><question>接手者读完概况后，有另一位 Agent 保存了一条关键决定。接手者仍携带旧修订号提交概况，会返回哪个错误标识？请同时检查修订增加时机和交接写入逻辑。</question><answer>STALE_CONTEXT</answer></qa_pair>
+  <qa_pair><question>文件读取成功之后，系统会保存执行记录，但是否仅凭这次读取就把任务概况标成待更新？请对照工具定义和记录逻辑回答 true 或 false。</question><answer>false</answer></qa_pair>
+  <qa_pair><question>当前任务提示词的预览窗口中，是否会显示可以直接调用的完整地址凭据？请对照预览和实际复制的服务端数据来源，回答 true 或 false。</question><answer>false</answer></qa_pair>
+  <qa_pair><question>Agent 通过命令启动了一个退出码为 7 的进程。结合命令启动、结束回调和事件持久化规则，command_finished 事件的 ok 字段最终是多少？</question><answer>0</answer></qa_pair>
+  <qa_pair><question>用户将任务归档后，在默认列表中看不到它。检查页面入口、查询参数和存储筛选，恢复浏览已归档任务所需的查询参数和值是什么？</question><answer>archived=1</answer></qa_pair>
+  <qa_pair><question>本机客户端走 stdio 接入时，服务实际执行命令的进程是否是每次重新打开数据库的 stdio 子进程？请跟踪代理与 HTTP 调用，回答 true 或 false。</question><answer>false</answer></qa_pair>
+  <qa_pair><question>两个 Agent 修改同一个已有文件。第一个读取后，第二个先完成修改，第一个再带旧哈希覆盖。沿参数校验、路径解析和落盘逻辑检查，写文件接口返回哪个错误标识？</question><answer>STALE_FILE</answer></qa_pair>
+  <qa_pair><question>GUI 中编辑发给云端 Agent 的授权连接格式后，哪个设置字段决定复制内容的连接说明？请同时检查保存接口、占位符替换和任务交接组装逻辑。</question><answer>connectionTemplate</answer></qa_pair>
+  <qa_pair><question>某条记忆同名更新两次后又被移除，当前搜索不再返回它。沿保存、移除和导出逻辑检查，历史正文所在的表名是什么？</question><answer>memory_versions</answer></qa_pair>
+</evaluation>

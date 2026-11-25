@@ -1,0 +1,6 @@
+{
+  "name": "liubendou-relay-gateway", "version": "0.2.0", "private": true,
+  "type": "module", "engines": { "node": ">=18" },
+  "scripts": { "start": "node server.mjs" },
+  "dependencies": { "ws": "8.22.1" }
+}
